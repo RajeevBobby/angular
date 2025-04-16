@@ -1,0 +1,70 @@
+<div class="visitorlisting">
+    <table class="table table-striped table-hover">
+        <thead>
+        <tr>
+            <th>
+                Visitor ID
+            </th>
+            <th>
+                Visitor Name
+            </th>
+            <th>
+                Host Name
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+        <tbody >
+        <tr>
+            <td>
+               001
+            </td>
+            <td>
+                Shamshuddin
+            </td>
+            <td>
+               johnny
+            </td>
+            <td>
+                <button class="btn btn-link">Delete</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+               002
+            </td>
+            <td>
+                RAJEEV
+            </td>
+            <td>
+               John 
+            </td>
+            <td>
+                <button class="btn btn-link">Delete</button>
+            </td>
+        </tr>
+        <tr *ngFor="let entry of tableData; let idx = index">
+            <td>{{ entry.visitorId }}</td>
+            <td>{{ entry.visitorName }}</td>
+            <td>{{ entry.hostName }}</td>
+            <td>
+                <button class="btn btn-link" (click)="RemoveItem(idx)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+<form>
+    <input type="text" name="vid" [(ngModel)]="visitorId" placeholder="Visitor ID" />
+    <input type="text" name="vname" [(ngModel)]="visitorName" placeholder="Visitor Name" />
+    <input type="text" name="hname" [(ngModel)]="hostName" placeholder="Host Name" />
+    <button type="button" (click)="AddNewEntry()">Add New Entry</button>
+</form>
+
+<div *ngIf="isPresent">
+    Name Already Present
+</div>
+
+

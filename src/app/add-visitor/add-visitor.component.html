@@ -1,0 +1,23 @@
+<div class="addvisit">
+    <form>
+   <div class="form-group">
+    <label class="form-control">Visitor ID: </label>
+    <input type="text" name="visId" [(ngModel)]="visId" class="form-control" placeholder="Enter Visitor ID"/>
+    </div>
+    <div>
+    <label class="form-control">Visitor Name: </label>
+    <input type="text" maxlength="40" name="visName" class="form-control" (keyup)="OnUserKeyUp()"[(ngModel)]="visName" placeholder="Enter Visitor Name"/>
+    <label>No. of chars Left: </label>{{numChars}}
+</div>
+<div>
+    <label class="form-control">Host Name: </label>
+    <input type="text" name="visHost" [(ngModel)]="visHost" class="form-control"placeholder="Enter Host Name"/>
+   </div>
+   <div class="form-group">
+    <button class="btn btn-primary form-control" (click)="OnVisitorAdd()">Save Visitor Data</button>
+   </div>
+</form>
+<div>
+    <span>Number of Visitors: {{visitorData.length}}</span>
+</div>
+</div>
